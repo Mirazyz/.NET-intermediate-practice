@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using TicketingSystem.Infrastructure.Persistence;
+
 namespace TicketingSystem
 {
     public class Program
@@ -5,6 +8,7 @@ namespace TicketingSystem
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            var connectionString = builder.Configuration.GetConnectionString("ticketing-context");
 
             // Add services to the container.
 
@@ -12,6 +16,9 @@ namespace TicketingSystem
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<TicketingDbContext>(options
+                => options.UseSqlServer(connectionString));
 
             var app = builder.Build();
 
@@ -25,7 +32,6 @@ namespace TicketingSystem
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
