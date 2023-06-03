@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using TicketingSystem.Domain.Entities;
+using TicketingSystem.Domain.Enums;
 
 namespace TicketingSystem.Infrastructure.Configurations
 {
@@ -16,6 +17,9 @@ namespace TicketingSystem.Infrastructure.Configurations
                 .WithMany(s => s.Offers)
                 .HasForeignKey(x => x.SeatId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            builder.Property(x => x.Status)
+                .HasDefaultValue(OfferStatus.Available);
         }
     }
 }

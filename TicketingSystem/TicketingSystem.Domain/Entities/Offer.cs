@@ -7,7 +7,7 @@ namespace TicketingSystem.Domain.Entities
     {
         public OfferStatus Status { get; set; }
 
-        public Purchase Purchase { get; set; }
+        public Purchase? Purchase { get; set; }
         public int SeatId { get; set; }
         public Seat Seat { get; set; }
 
