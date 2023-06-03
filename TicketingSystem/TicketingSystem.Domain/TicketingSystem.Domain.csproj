@@ -17,11 +17,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="DTOs\Purchase\" />
-    <Folder Include="DTOs\Seat\" />
-    <Folder Include="DTOs\Price\" />
-    <Folder Include="DTOs\Venue\" />
-  </ItemGroup>
-
 </Project>
