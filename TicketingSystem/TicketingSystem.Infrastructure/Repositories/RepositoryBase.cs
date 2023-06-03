@@ -1,4 +1,5 @@
-﻿using TicketingSystem.Domain.Common;
+﻿using Microsoft.EntityFrameworkCore;
+using TicketingSystem.Domain.Common;
 using TicketingSystem.Domain.Interfaces.Repositories;
 using TicketingSystem.Infrastructure.Persistence;
 
@@ -13,16 +14,16 @@ namespace TicketingSystem.Infrastructure.Repositories
             _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
-        public IEnumerable<T> FindAll()
+        public async Task<IEnumerable<T>> FindAllAsync()
         {
-            var entities = _context.Set<T>().ToList();
+            var entities = await _context.Set<T>().ToListAsync();
 
             return entities;
         }
 
-        public T? FindById(int id)
+        public async Task<T?> FindByIdAsync(int id)
         {
-            var entity = _context.Set<T>().Find(id);
+            var entity = await _context.Set<T>().FindAsync(id);
 
             return entity;
         }
@@ -39,14 +40,9 @@ namespace TicketingSystem.Infrastructure.Repositories
             _context.Update<T>(entity);
         }
 
-        public void Delete(int id)
+        public void Delete(T entity)
         {
-            var entity = FindById(id);
-
-            if (entity != null)
-            {
-                _context.Remove<T>(entity);
-            }
+            _context.Remove<T>(entity);
         }
     }
 }

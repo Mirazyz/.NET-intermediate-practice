@@ -87,7 +87,11 @@ namespace TicketingSystem.Infrastructure.Repositories
             _purchase = new PurchaseRepository(context);
             _seat = new SeatRepository(context);
             _venue = new VenueRepository(context);
+        }
 
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
     }
 }

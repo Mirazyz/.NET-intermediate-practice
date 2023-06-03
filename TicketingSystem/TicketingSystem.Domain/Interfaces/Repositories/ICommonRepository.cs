@@ -9,5 +9,7 @@
         public IPurchaseRepository Purchase { get; }
         public ISeatRepository Seat { get; }
         public IVenueRepository Venue { get; }
+
+        public Task SaveChangesAsync();
     }
 }
