@@ -4,7 +4,7 @@ using TicketingSystem.Infrastructure.Persistence;
 
 namespace TicketingSystem.Infrastructure.Repositories
 {
-    public class VenueRepository : RepositoryBase<Venue>, IVenueRepository
+    internal class VenueRepository : RepositoryBase<Venue>, IVenueRepository
     {
         public VenueRepository(TicketingDbContext context)
             : base(context) { }

@@ -4,7 +4,7 @@ using TicketingSystem.Infrastructure.Persistence;
 
 namespace TicketingSystem.Infrastructure.Repositories
 {
-    public class CustomerRepository : RepositoryBase<Customer>, ICustomerRepository
+    internal class CustomerRepository : RepositoryBase<Customer>, ICustomerRepository
     {
         public CustomerRepository(TicketingDbContext context)
             : base(context) { }

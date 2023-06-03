@@ -4,7 +4,7 @@ using TicketingSystem.Infrastructure.Persistence;
 
 namespace TicketingSystem.Infrastructure.Repositories
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : BaseEntity
+    internal class RepositoryBase<T> : IRepositoryBase<T> where T : BaseEntity
     {
         private readonly TicketingDbContext _context;
 
