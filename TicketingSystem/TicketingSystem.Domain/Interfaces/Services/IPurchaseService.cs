@@ -4,9 +4,9 @@ namespace TicketingSystem.Domain.Interfaces.Services;
 
 public interface IPurchaseService
 {
-    public Task<IEnumerable<PurchaseDto>> GetAllAsync();
-    public Task<PurchaseDto?> GetByIdAsync(int id);
-    public Task<PurchaseDto> CreateAsync(PurchaseForCreateDto purchaseToCreate);
-    public Task UpdateAsync(PurchaseForUpdateDto purchaseToUpdate);
-    public Task DeleteAsync(int id);
+    public Task<IEnumerable<PurchaseDto>> GetAllPurchasesAsync();
+    public Task<PurchaseDto?> GetPurchaseByIdAsync(int id);
+    public Task<PurchaseDto> CreatePurchaseAsync(PurchaseForCreateDto purchaseToCreate);
+    public Task UpdatePurchaseAsync(PurchaseForUpdateDto purchaseToUpdate);
+    public Task DeletePurchaseAsync(int id);
 }

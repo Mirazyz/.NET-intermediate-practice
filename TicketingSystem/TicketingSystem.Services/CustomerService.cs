@@ -14,7 +14,7 @@ namespace TicketingSystem.Services
         private readonly IMapper _mapper;
         private readonly ILogger<ICustomerService> _logger;
 
-        public CustomerService(ICommonRepository repository, IMapper mapper, ILogger<CustomerService> logger)
+        public CustomerService(ICommonRepository repository, IMapper mapper, ILogger<ICustomerService> logger)
         {
             _repository = repository ?? throw new ArgumentNullException(nameof(repository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -74,6 +74,7 @@ namespace TicketingSystem.Services
             catch (Exception ex)
             {
                 _logger.LogError($"Error while updating Customer with id: {customer.Id}", ex);
+                throw;
             }
         }
 

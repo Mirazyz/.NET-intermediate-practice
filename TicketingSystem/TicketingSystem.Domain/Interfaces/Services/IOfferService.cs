@@ -4,9 +4,9 @@ namespace TicketingSystem.Domain.Interfaces.Services;
 
 public interface IOfferService
 {
-    public Task<IEnumerable<OfferDto>> GetAllAsync();
-    public Task<OfferDto?> GetByIdAsync(int id);
-    public Task<OfferDto?> CreatAsync(OfferForCreateDto offerToCreate);
-    public Task UpdateAsync(OfferForUpdateDto offerToUpdate);
-    public Task DeleteAsync(int id);
+    public Task<IEnumerable<OfferDto>> GetAllOffersAsync();
+    public Task<OfferDto?> GetOfferByIdAsync(int id);
+    public Task<OfferDto?> CreateOfferAsync(OfferForCreateDto offerToCreate);
+    public Task UpdateOfferAsync(OfferForUpdateDto offerToUpdate);
+    public Task DeleteOfferAsync(int id);
 }

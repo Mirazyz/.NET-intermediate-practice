@@ -4,9 +4,9 @@ namespace TicketingSystem.Domain.Interfaces.Services;
 
 public interface ISeatService
 {
-    public Task<IEnumerable<SeatDto>> GetAllAsync();
-    public Task<SeatDto?> GetByIdAsync(int id);
-    public Task<SeatDto> CreateAsync(SeatForCreateDto seatToCreate);
-    public Task UpdateAsync(SeatForUpdateDto seatToUpdate);
-    public Task DeleteAsync(int id);
+    public Task<IEnumerable<SeatDto>> GetAllSeatsAsync();
+    public Task<SeatDto?> GetSeatByIdAsync(int id);
+    public Task<SeatDto> CreateSeatAsync(SeatForCreateDto seatToCreate);
+    public Task UpdateSeatAsync(SeatForUpdateDto seatToUpdate);
+    public Task DeleteSeatAsync(int id);
 }

@@ -4,9 +4,9 @@ namespace TicketingSystem.Domain.Interfaces.Services;
 
 public interface IEventService
 {
-    public Task<IEnumerable<EventDto>> GetAllAsync();
-    public Task<EventDto?> GetByIdAsync(int id);
-    public Task<EventDto> CreateAsync(EventForCreateDto eventToCreate);
-    public Task UpdateAsync(EventForUpdateDto eventToUpdate);
-    public Task<EventDto> DeleteAsync(int id);
+    public Task<IEnumerable<EventDto>> GetAllEventsAsync();
+    public Task<EventDto?> GetEventByIdAsync(int id);
+    public Task<EventDto> CreateEventAsync(EventForCreateDto eventToCreate);
+    public Task UpdateEventAsync(EventForUpdateDto eventToUpdate);
+    public Task DeleteEventAsync(int id);
 }
